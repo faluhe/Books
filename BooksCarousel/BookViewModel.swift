@@ -16,9 +16,9 @@ final class BookViewModel: BookViewModelType, ObservableObject {
 
     @Published var books: [Book] = []
 
-    var networkService: NetworkServiceType!
+    var networkService: NetworkServiceType
 
-    init(networkService: NetworkServiceType!) {
+    init(networkService: NetworkServiceType) {
         self.networkService = networkService
         loadData()
     }

@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
 
-    var viewModel: BookViewModelType
+    private let viewModel: BookViewModelType
     @State private var offsetX: CGFloat = 0
     @State private var maxOffsetX: CGFloat = -1
 
@@ -26,7 +26,7 @@ struct ContentView: View {
         }
     }
 
-    func backgroundCarousel(reader: GeometryProxy) -> some View {
+    private func backgroundCarousel(reader: GeometryProxy) -> some View {
         //calculations
         let bgWidth: CGFloat = reader.size.width * CGFloat(viewModel.books.count)
         let scrollPercentage = offsetX / maxOffsetX
@@ -49,7 +49,7 @@ struct ContentView: View {
         .position(x: bgWidth / 2 - posX, y: reader.size.height / 2)
     }
 
-    func booksCarousel(reader: GeometryProxy) -> some View {
+    private func booksCarousel(reader: GeometryProxy) -> some View {
         //calculations
         let screenSize = reader.size
         let itemWidth = screenSize.width * 0.8
@@ -73,7 +73,11 @@ struct ContentView: View {
                     .frame(width: 0)
 
                     ForEach(viewModel.books) { book in
-                        BookItem(book: book, width: itemWidth, height: itemHeight)
+                        BookItem(
+                            book: book,
+                            width: itemWidth,
+                            height: itemHeight
+                        )
                     }
                 }
             }
@@ -86,10 +90,9 @@ struct ContentView: View {
 
 
 #Preview {
-    ContentView(viewModel: BookViewModel(networkService: NetworkService()))
+    ContentView(
+        viewModel: BookViewModel(
+            networkService: NetworkService()
+        )
+    )
 }
-
-
-
-
-

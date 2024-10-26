@@ -10,11 +10,13 @@ import SwiftUI
 @main
 struct BooksCarouselApp: App {
 
-    var bookViewModel = BookViewModel(networkService: NetworkService())
-    
     var body: some Scene {
         WindowGroup {
-            ContentView(viewModel: bookViewModel)
+            ContentView(
+                viewModel: BookViewModel(
+                networkService: NetworkService()
+                )
+            )
         }
     }
 }

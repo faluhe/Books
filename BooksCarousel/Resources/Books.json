@@ -4,38 +4,38 @@
         "id": 2,
         "title": "Data Structures",
         "img": "DS",
-        "bg": "4"
+        "bg": "background"
     },
     {
         "id": 3,
         "title": "TDD",
         "img": "TDD",
-        "bg": "4"
+        "bg": "background"
     },
     {
         "id": 5,
         "title": "Cracking Interview",
         "img": "interview",
-        "bg": "4"
+        "bg": "background"
     },
     {
         "id": 1,
         "title": "Clean Code",
         "img": "code",
-        "bg": "4"
+        "bg": "background"
     },
     
     {
         "id": 4,
         "title": "Clean Architecture",
         "img": "architecture",
-        "bg": "4"
+        "bg": "background"
     },
     
     {
         "id": 6,
         "title": "iOS Unit Testing",
         "img": "testing",
-        "bg": "4"
+        "bg": "background"
     }
 ]
